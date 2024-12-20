@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Manish"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manish Arya (@crazy-manish) </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <style>
+    .ubuntu-regular {
+      font-family: "Ubuntu", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Ubuntu", serif;
+      line-height: 1.6;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #home {
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #fff;
+    }
+
+    #about {
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    #contact {
+      background: linear-gradient(to bottom, #3e5151, #decba4);
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-style: italic;
+      transition: transform 1s ease, opacity 1s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    #home p {
+      display: none;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      font-weight: bold;
+    }
+
+    nav {
+      position: fixed;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 0.5rem 0;
+      text-align: center;
+      transition: top 0.5s ease;
+    }
+
+    nav.show {
+      top: 0;
+    }
+
+    nav a {
+      color: #fff;
+      padding: 1.2rem;
+      margin: 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #928dab;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section:not(#home) h1, section:not(#home) p {
+      animation: fadeIn 1s ease;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.querySelector("nav");
+      const homeTitle = document.querySelector("#home h1");
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          nav.classList.add("show");
+          homeTitle.classList.add("fade-out");
+        } else {
+          nav.classList.remove("show");
+          homeTitle.classList.remove("fade-out");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h1>Manish Arya</h1><br>
+  </section>
+
+  <section id="about">
+    <h1>About</h1>
+    <br>
+    <p>I am a web developer with expertise in HTML, CSS, and a little bit JavaScript. I love building minimal and functional websites.</p><br>
+    <p>I am also passionate IT enthusiast dreaming a job while working with Computers. </p><br>
+  </section>
+
+  <section id="contact">
+    <h1>Contact</h1><br>
+    <p>Follow <a href="https://github.com/crazy-manish">@crazy-manish</a> on Github.</p><br>
+    <p>mailto:manish.arya104002@gmail.com</p><br>
+  </section>
+</body>
+</html>
